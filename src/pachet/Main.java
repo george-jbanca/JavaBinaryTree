@@ -12,6 +12,7 @@ public class Main {
         System.out.println(bt.search(2));
         System.out.println(bt.search(3));
         System.out.println(bt.countNodes());
+        System.out.println(bt.getHeight());
     }
 
 }

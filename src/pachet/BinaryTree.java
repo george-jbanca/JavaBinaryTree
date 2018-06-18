@@ -97,4 +97,23 @@ public class BinaryTree {
         }
         return false;
     }
+
+    public int getHeight() {
+        return getHeight(root);
+    }
+
+    private int getHeight(Node node) {
+        int counter = 0;
+        if (node == null) {
+            return counter;
+        } else {
+            counter = 1;
+            if (node.getLeftChild() != null && node.getRightChild() != null) {
+                counter++;
+            } else if (node.getLeftChild() != null || node.getRightChild() != null) {
+                counter++;
+            }
+        }
+        return counter;
+    }
 }
