@@ -103,17 +103,14 @@ public class BinaryTree {
     }
 
     private int getHeight(Node node) {
-        int counter = 0;
         if (node == null) {
-            return counter;
+            return 0;
         } else {
-            counter = 1;
-            if (node.getLeftChild() != null && node.getRightChild() != null) {
-                counter++;
-            } else if (node.getLeftChild() != null || node.getRightChild() != null) {
-                counter++;
-            }
+            int counter = 1;
+            counter += getHeight(node.getLeftChild());
+            counter += getHeight(node.getRightChild());
+            return counter;
         }
-        return counter;
     }
+
 }
